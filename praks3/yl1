@@ -1,0 +1,11 @@
+#! /bin/bash
+#
+# Kella ja kuupäeva väljstamine
+#
+# defineerimine
+kell=`date +"%H:%M"`
+#Defineerime kuupäeva muutuja
+kuupaev=`date +"%d.%m.%Y"`
+#trükime sisu välja koos selgitava tekstiga
+echo "Kell on $kell"
+echo "Kuupäev on $kuupaev"
