@@ -1,0 +1,16 @@
+
+#!/bin/bash
+#
+# Kehamassi index
+#
+# loome muutujat nii, et kasutajad sisestavad väärtused ise
+echo -n "Sisesta oma ees- ja perenimi: "
+read eesnimi perenimi #tekib nimi
+echo -n "Sisestage oma pikkus : "
+read pikkus
+echo -n "Sisestage oma kaal: "
+read kaal
+#Arvutamine
+bmi=$(echo "scale=2;($kaal/$pikkus^2)" | bc ) 
+echo "Lugupeetud $perenimi $eesnimi"
+echo "Teie kehamass on $bmi"
