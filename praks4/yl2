@@ -1,0 +1,19 @@
+
+#!/bin/bash
+#
+# täisnurkne kolmnurk
+#
+# loome muutujat nii, et kasutajad sisestavad väärtused ise
+echo -n "Sisesta a külje väärtus: "
+read a # sellega tekkib a muutuja, mille sisse on salvestatud kasutaja sisestatud väärtus
+echo -n "Sisesta b külje väärtus: "
+read b
+echo -n "Sisesta c külje väärtus: "
+read c
+# arvutused
+# Leiame ümbermöödu
+p=$(echo "scale=2;($a + $b + $c)/2" | bc )
+s=$(echo "scale=2;sqrt($p * ($p - $a) * ($p - $b) * ($p - $c))" | bc)
+echo "pindala = $s"
+
+
