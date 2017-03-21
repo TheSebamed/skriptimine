@@ -1,22 +1,19 @@
 #!/bin/bash
 #
-# arvu paarsuse kontroll
+# arv on positiivne või negatiivne
 #
-# lubame kasutajale sisestada arvu  väärtus
+
 echo -n "Sisesta suvaline täisarv: "
 read arv
-# arvutame jaak 2-ga jagamisel
-jaak=$(($arv % 2))
-# if lause algus
-# kontrollime, kas arv on paaaris
-if [ $jaak -eq 0 ]
+# arvutame
+if [ $arv -ge 0 ]
 then
-  # arv on paaris
-  echo "$arv on paaris"
+	#arv on positiivne
+	echo "$arv on positiivne"
 #muidu
 else
-  #arv on paaritu
-  echo "$arv on paaritu"
+	#arv on negatiivne
+	echo "$arv on negatiivne"
 # if lause lõpp
 fi
-echo "programmi lõpp
+echo "programmi lõpp"
