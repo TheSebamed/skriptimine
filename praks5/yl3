@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# arvu positiivsuse kontroll
+#
+# lubame kasutajale sisestada arvu väärtus
+echo -n "Sisesta suvaline täisarv"
+read arv
+# kontrollime, kas arv on paaris
+if [ $arv -gt 0 ]; then
+   # arv on positiivne
+   echo "$arv on positiivne"
+# muidu kui arv on väiksem kui 0
+elif [ $arv -lt 0 ]; then
+   # arv on negatiivne
+   echo "$arv on negatiivne"
+# kui ei ole suurem ega väiksem kui 0
+else
+  echo "$arv on neutraalne"
+# if lause lõpp
+fi
+echo "programmi lõpp"

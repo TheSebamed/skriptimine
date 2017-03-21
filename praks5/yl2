@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# arv on positiivne või negatiivne
+#
+
+echo -n "Sisesta suvaline täisarv: "
+read arv
+# arvutame
+if [ $arv -ge 0 ]
+then
+	#arv on positiivne
+	echo "$arv on positiivne"
+#muidu
+else
+	#arv on negatiivne
+	echo "$arv on negatiivne"
+# if lause lõpp
+fi
+echo "programmi lõpp"
