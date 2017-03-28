@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Numbrite ja sõnade lugemine kasutaja sisestades
+#
+kokku=0
+echo -n "Sisesta lause: "
+read lause
+for sona in $lause
+do
+ echo $sona
+ kokku=$(($kokku + 1))
+done
+echo "Lause koosneb $kokku sõnast"
