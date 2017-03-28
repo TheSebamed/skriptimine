@@ -9,7 +9,33 @@ then
  exit 1
 else
  failinimi=$1
- touch $failinimi
- exit 0
+#Kontrollime faili olemasolu
+ if [ -f $failinimi ]; then
+ echo "Faili $failinimi on juba olemas"
+#kontrollime faili sisu
+ if ! [ -s $failinimi ] ; then
+ echo "Antud fail on tühi"
+ else
+ echo "Antud fail ei ole tühi"
+ fi
+echo "Kui ei soovid ümber kirjutada,"
+ read -p "sisesta failinimi: " uusnimi
+ fi
+ if [ -f $uusnimi ]; then
+echo "Faili nimi juba kasutuses"
+exit 0
 fi
-
+# lisame uue faili nimi kontrolli
+if [ -n "$uusnimi" ]; then
+ failinimi=$uusnimi
+ fi
+ touch $failinimi
+# kui eelmine käsk . touch nimi on ok - $? on 0
+ if [ $? -eq 0 ] ; then
+ echo "Faili $failinimi on loodud"
+ exit 0
+ else
+ echo "Faili $failinimi loomisel on probleem"
+ exit 1
+ fi
+fi
