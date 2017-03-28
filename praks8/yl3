@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Numbrite väljastamine ja summa arvutamine - while
+#
+summa=0 #määrame summa algvärrtuse
+read -p "Sisesta number : " n
+#loeme sisestatud koorad
+k=0
+while [ -n "$n" ]
+do
+ summa=$(($summa + $n))
+ echo "jooksev summa on $summa"
+ echo "kui soovid jätkata, siis sisesta väärtus"
+ echo " peatamiseks vajuta lihtsalt enter"
+ read -p "Sisesta number : " n
+ k=$(($k + 1)) #suurendame lugemiskorda ühe võrra
+clear
+done
+echo "Arvude summa on $summa "
+echo "kokku sisestasid arvud $k korda"
