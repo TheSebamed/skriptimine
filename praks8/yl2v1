@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Numbrite väljastamine ja summa arvutamine - while
+#
+summa=0 #määrame summa algvärrtuse
+k=1  #määrame kordamise algväärtus
+while [ $k -le 5 ]
+do
+ read -p "Sisesta $k. number : " n
+ summa=$(($summa + $n))
+ k=$(($n + 1))
+done
+echo "Arvude summa on $summa "
+
