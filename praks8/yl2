@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# Numbrite väljastamine ja summa arvutamine - while
+#
+summa=0
+echo -n "Arvude "
+n=1
+while [ $n -le 5 ]
+do
+ echo -n "$n "
+ summa=$(($summa + $n))
+ n=$(($n + 1))
+done
+echo "Summa on $summa "
+
