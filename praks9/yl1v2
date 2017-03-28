@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# Failist info lugemine
+#
+while read rida
+do
+ #loeme iga rida : märgiga
+ #ja teisendame selle nii et rida oleks tühi
+ rida=$(echo $rida | sed 's/:/ /g')
+ #tühikutega rida on lihtne sõnadeks lõigata FOR tsükliga
+ for sona in $rida
+ do
+ echo $sona #tsükli iga sõna välja
+ done
+done < test
