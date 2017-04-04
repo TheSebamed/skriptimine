@@ -1,0 +1,28 @@
+#! /bin/bash
+#
+# Maiken Saveljev
+# Kuupäeva ja kalendri väljastamine
+# 
+#Tervitamine
+
+echo -n "Tere "
+echo -n `whoami | cut -c1 | tr [:lower:] [:upper:]` #lõike esimene täht ja muuda suureks 
+echo -n `whoami | cut -c2-` #lõika kõik tähed alatest 2-st 
+echo "!" 
+echo -n "Edasi minemiseks, vajutage ENTER: "
+read enter
+
+#
+
+kell=$(date +"%H:%M")
+# kuupäeva muutuja
+
+kuupaev=$(date +"%d.%m.%Y" ) #kuupäeva märkmed
+# Väljastame sisu
+echo "Täna on $kuupaev kell $kell" #kuupäeva ja kella väljastamine
+echo #Tühirida
+# Erastada kalendrit
+echo "=================="
+#Kalendri väljastamiseks on cal.
+cal | tail -n 7
+echo "=================="
