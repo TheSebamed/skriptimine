@@ -1,0 +1,29 @@
+#! /bin/bash
+#
+# Maiken Saveljev
+# Menüü väljastamine ja sellele kommentaari lisamine.
+#Anname numbritele väärtuse.
+for((number=1;number<4;number++))
+do
+#Avame menüüd ja väljastame need kasutajale.
+cat  menu$number.txt
+done
+# Soovime kasutajalt teada saada, millist varianti ta soovib.
+echo "Please give a number (1 or 2 or 3): "
+read number
+clear #Puhastame ekraani, et kasutaja saaks ilusti lugeda.
+# Juhul, kui valitakse mingi number, siis väljastatakse järgnev.
+case $number in
+1)	echo -e "\nStick to your ribs.\n     Watch your cholesterol!.\n     Enjoy your meal!" 
+	;;
+2)	echo -e "\n     British are coming!!\n     Enjoy your meal!"
+	;;
+3)	echo -e "\n     Health foods..\n     Dieting is so boring.\n     Enjoy your meal!"
+	;;
+*)	echo -e "Use only numbers 1-3"
+	;;
+
+esac
+echo -n "Lõpetamiseks vajutage enter:"
+read enter
+exit
