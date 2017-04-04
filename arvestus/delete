@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Maiken Saveljev
+# Skript võtab faili nimed,edastab need kasutajale ja laseb kasutajal selle kustutada
+#
+#Faili nime küsimine kasutajalt
+echo "Millist faili te soovite kustutada?: "
+read kustuta
+# If funktsiooni koostamine, kontrollime kas fail on olemas.
+if [ ! -f $kustuta ]
+then
+echo "Sellise nimega faili ei ole olemas."
+echo "Palun sisestage korrekste nimega fail."
+else
+echo "Fail on olemas, nüüd kustutame selle faili ära."
+fi
+#Küsime, kas kasutaja on ikka selles kindel
+read -p "Kas olete kindel? (y/n)?" kindel
+if [ "$kindel" = "y" ]; then
+ echo "Selge, fail nimega '$kustuta' on nüüd kustutatud";
+ echo
+else 
+ echo "Teie faili ei kustutatud kuna te ei olnud endas kindel!!!";
+ exit
+ echo
+fi
+# Kasutaja antud faili kustutamine
+rm -rf $kustuta
+echo "Väljastatud failid on teie kaustas alles."
+echo
+ls
+
+#Skripti lõpp.
